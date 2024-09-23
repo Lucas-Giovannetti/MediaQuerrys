@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Responsivo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+        nav {
+            background-color: #f4f4f4;
+            padding: 0.5rem;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li {
+            margin: 0 10px;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+        main {
+            flex: 2;
+            min-width: 0;
+        }
+        aside {
+            flex: 1;
+            min-width: 200px;
+            background-color: #f4f4f4;
+            padding: 1rem;
+            margin-left: 1rem;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Media Query para Impressão */
+        @media print {
+            nav, aside {
+                display: none;
+            }
+            body {
+                font-size: 12pt;
+            }
+            header {
+                background-color: white;
+                color: black;
+            }
+        }
+
+        /* Media Query para Smartphones */
+        @media screen and (max-width: 600px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            nav ul li {
+                margin: 5px 0;
+            }
+            .container {
+                flex-direction: column;
+            }
+            aside {
+                margin-left: 0;
+                margin-top: 1rem;
+                background-image: url(https://i.pinimg.com/236x/08/9a/99/089a99b0f31b49708bd80c9d53a56b1d.jpg);
+            }
+        }
+
+        /* Media Query para Tablets */
+        @media screen and (min-width: 601px) and (max-width: 900px) {
+            .container {
+                flex-direction: column;
+            }
+            aside {
+                margin-left: 0;
+                margin-top: 1rem;
+            }
+        }
+
+        /* Media Query para orientação paisagem em dispositivos móveis */
+        @media screen and (max-width: 900px) and (orientation: landscape) {
+            .container {
+                flex-direction: row;
+            }
+            main {
+                flex: 1;
+            }
+            aside {
+                flex: 0 0 30%;
+                margin-left: 1rem;
+                margin-top: 0;
+            }
+            body {
+                font-size: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Meu Blog Responsivo</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#">Início</a></li>
+            <li><a href="#">Sobre</a></li>
+            <li><a href="#">Artigos</a></li>
+            <li><a href="#">Contato</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <main>
+            <article>
+                <h2>Título do Artigo</h2>
+                <img src="https://gru.ifsp.edu.br/images/phocagallery/galeria2/image03_grd.png" alt="Imagem do artigo">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget felis eget nunc lobortis mattis aliquam faucibus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+            </article>
+        </main>
+        <aside>
+            <h3>Posts Recentes</h3>
+            <ul>
+                <li><a href="#">Post 1</a></li>
+                <li><a href="#">Post 2</a></li>
+                <li><a href="#">Post 3</a></li>
+            </ul>
+        </aside>
+    </div>
+</body>
+</html>
